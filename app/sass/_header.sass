@@ -1,5 +1,6 @@
 header
   position: relative
+
 .menu-default
   display: flex
   flex-direction: row
@@ -11,7 +12,6 @@ header
   img
     z-index: 3
 
-
   .menu
     color: #362f2f
     font-size: 12px
@@ -21,15 +21,22 @@ header
     list-style: none
     display: flex
     flex-direction: row
-
+    justify-content: space-around
+    margin-top: 30px
     max-width: 404px
     width: 100%
-    ul
-      li
-        a
-          margin: 30px 15px
-
-
+    display: none
+    li
+      a
+        color: #362f2f
+        text-decoration: none
+        margin-top: 7px
+        border-bottom: 1px solid transparent
+        &:hover
+          border-bottom: 1px solid #f3c90c
+          margin-top: 7px
+    .first-submenu
+      display: none
 
   .header-socials
     max-width: 144px

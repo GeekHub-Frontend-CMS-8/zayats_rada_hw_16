@@ -73,12 +73,28 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 30px;
   max-width: 404px;
   width: 100%;
+  display: none;
 }
 
-.menu-default .menu ul li a {
-  margin: 30px 15px;
+.menu-default .menu li a {
+  color: #362f2f;
+  text-decoration: none;
+  margin-top: 7px;
+  border-bottom: 1px solid transparent;
+}
+
+.menu-default .menu li a:hover {
+  border-bottom: 1px solid #f3c90c;
+  margin-top: 7px;
+}
+
+.menu-default .menu .first-submenu {
+  display: none;
 }
 
 .menu-default .header-socials {
