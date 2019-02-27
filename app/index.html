@@ -21,52 +21,102 @@
 <div class="wrapper">
 
     <header>
-        <div class="menu-default">
-
-                <object type="image/svg+xml" data="img/main/menu-default.svg" width="50" height="50"></object>
-
-                <ul class="menu">
-                    <li><a href="#">portfolio</a></li>
-                    <ul class="first-submenu">
-                        <li><a href="#">Fashion</a></li>
-                        <li><a href="#">Editorial</a></li>
-                        <li><a href="#">street</a></li>
-                        <li><a href="#">black white</a></li>
-                        <ul class="second-submenu">
-                            <li><a href="#">Gallery /1</a></li>
-                            <li><a href="#">Gallery /1</a></li>
-                            <li><a href="#">Gallery /3</a></li>
-                            <li><a href="#">Gallery /4</a></li>
-                            <li><a href="#">Gallery /5</a></li>
-                        </ul>
-                        <li><a href="">personal</a></li>
+        <div class="wrapper">
+            <div class="nav-block-header">
+                <div class="btn-block">
+                    <button class="main-btn btn-open">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <button class="main-btn btn-closed">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <nav id="nav" class="nav none">
+                    <ul class="menu">
+                        <li class="menu-item">
+                            <a href="portfolio.html">portfolio</a>
+                            <ul class="submenu">
+                                <li class="submenu-item"><a href="#"><i class="fas fa-caret-right"></i>fashion</a></li>
+                                <li class="submenu-item"><a href="#"><i class="fas fa-caret-right"></i>editorial</a>
+                                </li>
+                                <li class="submenu-item"><a href="#"><i class="fas fa-caret-right"></i>street</a></li>
+                                <li class="submenu-item"><a href="#"><i class="fas fa-caret-right"></i>black white</a>
+                                    <ul class="submenu">
+                                        <li class="submenu-item"><a href="#"><i class="fas fa-caret-right"></i>gallery
+                                            /1</a></li>
+                                        <li class="submenu-item"><a href="#"><i class="fas fa-caret-right"></i>gallery
+                                            /2</a></li>
+                                        <li class="submenu-item"><a href="#"><i class="fas fa-caret-right"></i>gallery
+                                            /3</a></li>
+                                        <li class="submenu-item"><a href="#"><i class="fas fa-caret-right"></i>gallery
+                                            /4</a></li>
+                                        <li class="submenu-item"><a href="#"><i class="fas fa-caret-right"></i>gallery
+                                            /5</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu-item"><a href="#"><i class="fas fa-caret-right"></i>personal</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item"><a href="#">clients</a></li>
+                        <li class="menu-item"><a href="blog.html">news</a></li>
+                        <li class="menu-item"><a href="#">about me</a></li>
+                        <li class="menu-item"><a href="#">contact</a></li>
                     </ul>
-                    <li><a href="#">clients</a></li>
-                    <li><a href="#">news</a></li>
-                    <li><a href="#">about me</a></li>
-                    <li><a href="#">contact</a></li>
-                </ul>
-
-
-            <img src="img/main/square_logo.svg" alt="Square">
-            <div class="header-socials">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-flickr"></i></a>
-                <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                <a href="#"><i class="fas fa-envelope"></i></a>
+                </nav>
             </div>
-        </div>
-
-        <div class="menu-open">
-
+            <img src="img/main/square_logo.png" alt="main_logo">
+            <ul class="social">
+                <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://www.flickr.com/"><i class="fab fa-flickr"></i></a></li>
+                <li><a href="https://plus.google.com/"><i class="fab fa-google-plus-g"></i></a></li>
+                <li><a href="mailto:rada.zayats@i.ua?subject=Справилась я с ДЗ"><i class="fas fa-envelope"></i></a></li>
+            </ul>
         </div>
     </header>
 
     <div class="portfolio">
-        <div class="slide">
-            <img src="img/main-slider/Photo.jpg" alt="Morgan Freeman">
+        <div id="gallery">
+            <div class="slide">
+                <div class="photos">
+                    <img src="img/main-slider/Photo.jpg" alt="Morgan Freeman">
+                    <img src="img/blog-post/your_photo.jpg" alt="Brad Pitt">
+                </div>
+
+                <div class="popup">
+                    <div class="popup_content">
+                        <div>
+                            <h4 class="popup_title">morgan freeman</h4>
+                            <p class="popup_subtitle">actor</p>
+                            <p class="popup_text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Quisque fringilla mi orci, ac venenatis ante venenatis eget.
+                            </p>
+                        </div>
+                        <div class="popup_right">
+                            <i class="fas fa-compress-arrows-alt popup_icon"></i>
+                            <div class="buttons">
+                                <button class="prev"><i class="fas fa-angle-left"></i></button>
+                                <button class="next"><i class="fas fa-angle-right"></i></button>
+                            </div>
+                            <p>1 / 10</p>
+                        </div>
+                    </div>
+                    <ul class="popup_icon">
+                        <li>
+                            <i class="fas fa-heart"></i>
+                        </li>
+                        <li>
+                            <i class="fas fa-share"></i>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
         </div>
 
     </div>
@@ -158,6 +208,7 @@
         </div>
     </div>
 
+
     <div class="partners">
         <img src="img/partners/phaseone_logo.png" alt="">
         <img src="img/partners/manfrotto_logo.png" alt="">
@@ -178,6 +229,6 @@
     </footer>
 
 </div>
-
+<script src="js/menu-opener.js"></script>
 </body>
 </html>

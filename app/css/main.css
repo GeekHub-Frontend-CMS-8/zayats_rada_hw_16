@@ -31,131 +31,10 @@ body {
   margin: 0 auto;
 }
 
-/*header
-  position: relative */
-/*.menu-default
-  display: flex
-  flex-direction: row
-  flex-wrap: wrap
-  justify-content: space-between
-  z-index: 1
-  object
-    margin-top: 9px
-  img
-    z-index: 3
-
-  .menu
-    color: #362f2f
-    font-size: 12px
-    font-weight: 700
-    text-transform: uppercase
-    letter-spacing: 1.2px
-    list-style: none
-    display: flex
-    flex-direction: row
-    justify-content: space-around
-    margin-top: 30px
-    max-width: 404px
-    width: 100%
-    display: none
-    li
-      a
-        color: #362f2f
-        text-decoration: none
-        margin-top: 7px
-        border-bottom: 1px solid transparent
-        &:hover
-          border-bottom: 1px solid #f3c90c
-          margin-top: 7px
-    .first-submenu
-      display: none
-
-  .header-socials
-    max-width: 144px
-    width: 100%
-    display: flex
-    flex-direction: row
-    flex-wrap: wrap
-    justify-content: space-between
-    align-items: center
-    i
-      color: black*/
-/*header
-  position: relative
-  height: 70px
-  .wrapper
-    display: flex
-    justify-content: space-between
-    align-items: center
-    .nav-block-header
-      display: flex
-      align-items: center
-      .main-btn
-        position: absolute
-        width: 100%
-        height: 100%
-        border: 1px solid #362f2f
-      .btn-block
-        position: relative
-        width: 50px
-        height: 50px
-      .btn-open
-          z-index: 100
-          background-color: #362f2f
-          color: white
-      .btn-closed
-          background-color: transparent
-          color: black
-  .none
-    display: none
-
-    .menu
-      display: flex
-      li a
-        display: block
-        padding: 10px 15px
-
-      .menu-item
-        margin-right: 2px
-        position: relative
-
-      .menu-item, .submenu-item
-        color: #362f2f
-        font: 700 12px/1 "Roboto Condensed"
-        text-transform: uppercase
-        letter-spacing: 1.2px
-
-        .submenu
-          position: absolute
-          display: none
-          top: 57%
-          left: 100%
-          background-color: #fff
-
-          .submenu-item
-            margin-top: 1px
-
-  a
-    color: black
-
-  img
-    position: absolute
-    z-index: 100
-    top: 0
-    left: 46%
-
-  .social
-    max-width: 170px
-    color: #362f2f
-    font-size: 12px
-    list-style: none
-    display: flex
-    flex-direction: row
-    li
-      margin-right: 15px*/
 header {
   position: relative;
   height: 70px;
+  z-index: 3;
 }
 
 header .wrapper {
@@ -170,7 +49,7 @@ header .wrapper {
           align-items: center;
 }
 
-header .nav-block-header {
+header .wrapper .nav-block-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -179,26 +58,26 @@ header .nav-block-header {
           align-items: center;
 }
 
-header .btn-block {
+header .wrapper .nav-block-header .btn-block {
   position: relative;
   width: 50px;
   height: 50px;
 }
 
-header .main-btn {
+header .wrapper .nav-block-header .main-btn {
   position: absolute;
   width: 100%;
   height: 100%;
   border: 1px solid #362f2f;
 }
 
-header .btn-open {
+header .wrapper .nav-block-header .btn-open {
   z-index: 100;
   background-color: #362f2f;
   color: white;
 }
 
-header .btn-closed {
+header .wrapper .nav-block-header .btn-closed {
   background-color: transparent;
   color: black;
 }
@@ -211,9 +90,10 @@ header .menu li a {
   display: block;
   padding: 10px 15px;
   text-decoration: none;
+  border: 1px solid transparent;
 }
 
-header .menu-item {
+header .menu li a .menu-item {
   margin-right: 2px;
   position: relative;
 }
@@ -224,6 +104,12 @@ header .menu-item, header .submenu-item {
   letter-spacing: 1.2px;
   font-size: 12px;
   font-weight: 700;
+  border: 1px solid transparent;
+}
+
+header .menu-item:hover, header .submenu-item:hover {
+  border-bottom: 1px solid #f3c90c;
+  margin-top: 7px;
 }
 
 header .menu {
@@ -231,9 +117,10 @@ header .menu {
   display: -ms-flexbox;
   display: flex;
   list-style: none;
+  border-bottom: 1px solid transparent;
 }
 
-header .submenu {
+header .menu .submenu {
   position: absolute;
   display: none;
   background-color: #fff;
@@ -242,6 +129,11 @@ header .submenu {
 
 header .submenu-item {
   margin-top: 1px;
+  width: 100%;
+}
+
+header .submenu-item:hover {
+  color: #c3a000;
 }
 
 header .submenu-item .submenu {
@@ -278,14 +170,116 @@ header .social li {
   margin-right: 15px;
 }
 
-.portfolio {
-  position: relative;
-  top: -30px;
+@media (max-width: 992px) {
+  .social li {
+    display: none;
+  }
 }
 
-.portfolio .slide img {
+.portfolio {
+  position: relative;
+  top: -5px;
+  z-index: 1;
+}
+
+.portfolio #gallery .slide {
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio #gallery .slide .photos img {
+  max-width: 1140px;
   width: 100%;
+  max-height: 1140px;
   height: auto;
+  display: none;
+}
+
+.portfolio #gallery .slide .photos img:first-child {
+  display: block;
+}
+
+.portfolio #gallery .slide .popup {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 263px;
+  height: 263px;
+  background: #ffffff;
+  color: #362f2f;
+  font: 400 18px/1 "Roboto Condensed";
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 24px 19px;
+}
+
+.portfolio #gallery .slide .popup .popup_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 60px;
+}
+
+.portfolio #gallery .slide .popup .popup_content .popup_title {
+  text-transform: uppercase;
+  margin-top: 48px;
+}
+
+.portfolio #gallery .slide .popup .popup_content .popup_subtitle {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.portfolio #gallery .slide .popup .popup_content .popup_text {
+  font: 300 14px/1 "Roboto Condensed";
+  margin-top: 14px;
+  width: 159px;
+}
+
+.portfolio #gallery .slide .popup_icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #c29f00;
+  font-size: 14px;
+  list-style: none;
+}
+
+.portfolio #gallery .slide .popup_right {
+  width: 70px;
+}
+
+.portfolio #gallery .slide .popup_right p {
+  font-size: 14px;
+  margin-top: 11px;
+  padding-left: 15px;
+}
+
+.portfolio #gallery .slide .popup_right .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 66px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 90px;
+}
+
+.portfolio #gallery .slide .popup_right .buttons .prev, .portfolio #gallery .slide .popup_right .buttons .next {
+  border: none;
+  background-color: #362f2f;
+  padding: 13px 14px;
+}
+
+.portfolio #gallery .slide .popup_right .buttons .prev i, .portfolio #gallery .slide .popup_right .buttons .next i {
+  color: #ffffff;
 }
 
 .bottom {
@@ -298,10 +292,11 @@ header .social li {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 61px;
+  position: relative;
 }
 
 .bottom .workshop {
@@ -317,6 +312,7 @@ header .social li {
   height: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin: 10px;
 }
 
 .bottom .workshop .description {
@@ -392,6 +388,7 @@ header .social li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin: 10px;
 }
 
 .news h3 {
@@ -491,6 +488,7 @@ header .social li {
           align-items: center;
   width: 314px;
   height: 100%;
+  margin: 10px;
 }
 
 .contacts .contacts-links {
@@ -586,9 +584,9 @@ header .social li {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-align: center;
@@ -598,6 +596,10 @@ header .social li {
   max-width: 1108px;
   width: 100%;
   height: 100%;
+}
+
+.partners img {
+  margin: 30px;
 }
 
 footer {
